@@ -31,13 +31,14 @@ if ( usr === 'rock' && pc === 'paper'){result = "you lose! Paper(Paa) beats Rock
 }else if (usr === 'paper' && pc === 'scissors'){result = "you lose! Scissors(Choki) beats Paper(Paa)!";
 }else if (usr === 'scissors' && pc === 'rock'){result = "you lose! Rock(Guu) beats Scissors(Choki)!";
 } else if  (usr === 'paper' && pc === 'rock'){result = "you win! Paper(Paa) beats Rock(Guu)!";
-} else if  (usr === 'rock' && pc === 'scissors'){result = "you win! Scissor(Choki) beats Paper(Paa)!";
+} else if  (usr === 'rock' && pc === 'scissors'){result = "you win! Rock(Guu) beats Scissors(CHoki)!";
 } else if  (usr === 'scissors' && pc === 'paper'){result = "you win! Scissors(Choki) beats Paper(Paa)!";
 } else {result = "It/s a draw!";
 } return result;
 }
 
 function game(){
+    alert("Saisho wa guu! (Starting with stone!)")
 let round=0;
 let result=0;
 let w=0;
@@ -49,10 +50,13 @@ result=round.slice(0,8);
 if (result==='you win!'){w++;
 }else if (result==="you lose"){l++;}
 else {tie++;}
+alert("Round:" + (i+1) + " Janken pon!");
+alert(round);
 console.log("Round: " + (i+1));
 console.log(round);
 console.log("score" + " W:" +w+" L:"+l+" Tie:"+tie);
     }
+    alert("score" + " W:" +w+" L:"+l+" Tie:"+tie);
 }
 game()
 //play again
