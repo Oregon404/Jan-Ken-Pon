@@ -33,7 +33,7 @@ if ( usr === 'rock' && pc === 'paper'){result = "you lose! Paper(Paa) beats Rock
 } else if  (usr === 'paper' && pc === 'rock'){result = "you win! Paper(Paa) beats Rock(Guu)!";
 } else if  (usr === 'rock' && pc === 'scissors'){result = "you win! Rock(Guu) beats Scissors(CHoki)!";
 } else if  (usr === 'scissors' && pc === 'paper'){result = "you win! Scissors(Choki) beats Paper(Paa)!";
-} else {result = "It/s a draw!";
+} else {result = "It's a draw!";
 } return result;
 }
 
