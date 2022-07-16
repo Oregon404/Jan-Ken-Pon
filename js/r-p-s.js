@@ -9,7 +9,6 @@ function getUsersChoice(choice){
 }else if (lowerCase === 'scissors' || lowerCase === 'choki' ){choice = "scissors"; break;
 }
     }
-console.log("Users choice: " + choice);
 return choice;
 }
 //get computer's choice
@@ -17,27 +16,44 @@ function getComputerChoice(choice){let randomNum= Math.floor(Math.random() * 3) 
 if (randomNum===1){ choice = "rock";
 } else if (randomNum===2){ choice = "paper";
 } else { choice = "scissors";}
-console.log("pc Choice: " + choice);
 return choice;}
 
 //start game. Saisho wa guu (Starting with stone)
 // show hands "Janken pon!"
 //show winner
-const usr = getUsersChoice()
-console.log(usr);
-const pc = getComputerChoice()
-console.log(pc);
-function game(){
+
+function play(){
+let usr = getUsersChoice()
+let pc = getComputerChoice()
+
     //you lose
-if ( usr === 'rock' && pc === 'paper'){return "you lose! Paper(Paa) beats Rock(Guu)!";
-}else if (usr === 'paper' && pc === 'scissors'){return "you lose! Scissors(Choki) beats Paper(Paa)!";
-}else if (usr === 'scissors' && pc === 'rock'){return "you lose! Rock(Guu) beats Scissors(Choki)!";
-} else if  (usr === 'paper' && pc === 'rock'){return "you win! Paper(Paa) beats Rock(Guu)!";
-} else if  (usr === 'rock' && pc === 'scissors'){return "you win! Scissor(Choki) beats Paper(Paa)!";
-} else if  (usr === 'scissors' && pc === 'paper'){return "you win! Scissors(Choki) beats Paper(Paa)!";
-} else {return "It/s a draw!";
+if ( usr === 'rock' && pc === 'paper'){result = "you lose! Paper(Paa) beats Rock(Guu)!";
+}else if (usr === 'paper' && pc === 'scissors'){result = "you lose! Scissors(Choki) beats Paper(Paa)!";
+}else if (usr === 'scissors' && pc === 'rock'){result = "you lose! Rock(Guu) beats Scissors(Choki)!";
+} else if  (usr === 'paper' && pc === 'rock'){result = "you win! Paper(Paa) beats Rock(Guu)!";
+} else if  (usr === 'rock' && pc === 'scissors'){result = "you win! Scissor(Choki) beats Paper(Paa)!";
+} else if  (usr === 'scissors' && pc === 'paper'){result = "you win! Scissors(Choki) beats Paper(Paa)!";
+} else {result = "It/s a draw!";
+} return result;
 }
+
+function game(){
+let round=0;
+let result=0;
+let w=0;
+let l=0;
+let tie=0
+for (let i=0; i<5;i++){
+round= play();
+result=round.slice(0,8);
+if (result==='you win!'){w++;
+}else if (result==="you lose"){l++;}
+else {tie++;}
+console.log("Round: " + (i+1));
+console.log(round);
+console.log("score" + " W:" +w+" L:"+l+" Tie:"+tie);
+    }
 }
-console.log(game());
+game()
 //play again
 
