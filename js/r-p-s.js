@@ -18,15 +18,12 @@ if (randomNum===1){ choice = "rock";
 } else { choice = "scissors";}
 return choice;}
 
-//start game. Saisho wa guu (Starting with stone)
-// show hands "Janken pon!"
-//show winner
-
+//plays one round
 function play(){
 let usr = getUsersChoice()
 let pc = getComputerChoice()
 
-    //you lose
+    //outcome of round
 if ( usr === 'rock' && pc === 'paper'){result = "you lose! Paper(Paa) beats Rock(Guu)!";
 }else if (usr === 'paper' && pc === 'scissors'){result = "you lose! Scissors(Choki) beats Paper(Paa)!";
 }else if (usr === 'scissors' && pc === 'rock'){result = "you lose! Rock(Guu) beats Scissors(Choki)!";
@@ -36,7 +33,7 @@ if ( usr === 'rock' && pc === 'paper'){result = "you lose! Paper(Paa) beats Rock
 } else {result = "It's a draw!";
 } return result;
 }
-
+//play a game amount of rounds set by "i"
 function game(){
     alert("Saisho wa guu! (Starting with stone!)")
 let round=0;
