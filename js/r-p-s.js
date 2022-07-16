@@ -53,7 +53,7 @@ console.log("Round: " + (i+1));
 console.log(round);
 console.log("score" + " W:" +w+" L:"+l+" Tie:"+tie);
     }
-    alert("score" + " W:" +w+" L:"+l+" Tie:"+tie);
+    alert("GG WP Final Score" + " W:" +w+" L:"+l+" Tie:"+tie);
 }
 game()
 //play again
